@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patrik Žák – poslanec a viceprimátor Trenčína</title>
+<meta name="description" content="Osobná stránka Patrika Žáka, poslanca mestskej časti Juh v Trenčíne a druhého viceprimátora mesta Trenčín.">
+<style>
+  :root{
+    --text:#1a1a1a;
+    --muted:#5a5a5a;
+    --blue:#1e388e;
+    --yellow-1:#fdd13f;
+    --yellow-2:#feb821;
+    --border:#e6e6e6;
+    --maxw:1000px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:#ffffff;
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;
+  }
+  a{color:var(--blue);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  header{
+    position:sticky;
+    top:0;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--border);
+    z-index:100;
+  }
+  .header-inner{
+    max-width:var(--maxw);
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 24px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .brand img{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid var(--blue);
+  }
+  .brand-text{
+    font-weight:700;
+    font-size:1.02rem;
+    color:var(--blue);
+    white-space:nowrap;
+  }
+  nav ul{
+    display:flex;
+    list-style:none;
+    gap:14px;
+  }
+  nav a{
+    display:inline-block;
+    color:#ffffff;
+    background:var(--blue);
+    border:2px solid var(--blue);
+    border-radius:999px;
+    padding:8px 16px;
+    font-weight:700;
+    font-size:0.9rem;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    transition:color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease;
+  }
+  nav a:hover{
+    color:var(--blue);
+    background:linear-gradient(135deg,var(--yellow-1),var(--yellow-2));
+    border-color:var(--yellow-2);
+    text-decoration:none;
+    transform:translateY(-1px);
+  }
+
+  .nav-toggle{
+    display:none;
+    background:linear-gradient(135deg,var(--blue),#274a9e);
+    border:2px solid var(--blue);
+    border-radius:8px;
+    font-size:1.45rem;
+    line-height:1;
+    padding:8px 10px;
+    cursor:pointer;
+    color:#ffffff;
+    margin-left:auto;
+    transition:background .2s ease, border-color .2s ease;
+  }
+  .nav-toggle:hover,
+  .nav-toggle:focus-visible{
+    background:linear-gradient(135deg,var(--yellow-1),var(--yellow-2));
+    border-color:var(--yellow-2);
+    color:var(--blue);
+  }
+
+  section{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:64px 24px;
+  }
+  .hero{padding-top:80px;}
+  .hero h1{
+    font-size:2.1rem;
+    margin-bottom:8px;
+    line-height:1.25;
+    color:var(--blue);
+  }
+  .hero p.role{
+    color:var(--muted);
+    font-size:1.05rem;
+    margin-bottom:18px;
+    font-weight:600;
+  }
+  .hero p.intro{max-width:560px;}
+
+  h2{
+    font-size:1.6rem;
+    margin-bottom:28px;
+    padding-bottom:12px;
+    border-bottom:4px solid transparent;
+    border-image:linear-gradient(90deg,var(--yellow-1),var(--yellow-2)) 1;
+    display:inline-block;
+    color:var(--blue);
+  }
+
+  .projects-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0 48px;
+  }
+  .project-group{margin-bottom:36px;}
+  .project-group h3{
+    font-size:1.15rem;
+    margin-bottom:14px;
+    color:var(--blue);
+  }
+  .project-group ul{list-style:none;padding-left:0;}
+  .project-group li{
+    padding:8px 0 8px 22px;
+    border-bottom:1px solid var(--border);
+    position:relative;
+  }
+  .project-group li:last-child{border-bottom:none;}
+  .project-group li::before{
+    content:"—";
+    position:absolute;
+    left:0;
+    background:linear-gradient(180deg,var(--yellow-1),var(--yellow-2));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    font-weight:700;
+  }
+
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:start;
+  }
+  .about-grid p{margin-bottom:16px;}
+
+  .contact-list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    font-size:1.05rem;
+  }
+  .contact-list li{display:flex;align-items:center;gap:10px;}
+  .contact-list .label{font-weight:600;min-width:90px;color:var(--blue);}
+  .contact-list a:hover{color:var(--yellow-2);}
+
+  footer{
+    text-align:center;
+    padding:32px 24px;
+    color:#ffffff;
+    font-size:0.85rem;
+    background:linear-gradient(90deg,var(--blue),#274a9e);
+  }
+
+  @media (max-width:768px){
+    .header-inner{justify-content:flex-start;}
+    nav{margin-left:auto;}
+    nav ul{
+      position:absolute;
+      top:100%;
+      right:0;
+      left:0;
+      background:#ffffff;
+      flex-direction:column;
+      gap:0;
+      border-bottom:1px solid var(--border);
+      display:none;
+      padding:8px 20px 16px;
+    }
+    nav ul.open{display:flex;}
+    nav li{border-top:1px solid var(--border);}
+    nav a{
+      display:block;
+      text-align:center;
+      margin-top:8px;
+      padding:11px 16px;
+    }
+    .nav-toggle{display:block;}
+    .hero{text-align:center;padding-top:48px;}
+    .hero p.intro{margin:0 auto;}
+    .about-grid{grid-template-columns:1fr;}
+    .projects-grid{grid-template-columns:1fr;gap:0;}
+    section{padding:48px 20px;}
+  }
+
+  @media (max-width:420px){
+    .brand-text{font-size:0.85rem;}
+    .hero h1{font-size:1.6rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <img src="profil.jpg" alt="Patrik Žák">
+      <span class="brand-text">Patrik Žák</span>
+    </div>
+    <nav>
+      <button class="nav-toggle" aria-label="Otvoriť menu" aria-controls="nav-menu" aria-expanded="false" onclick="toggleMenu(this)">☰</button>
+      <ul id="nav-menu">
+        <li><a href="#o-mne">O mne</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="uvod">
+  <div>
+    <h1>Patrik Žák</h1>
+    <p class="role">Poslanec mestskej časti Juh · druhý viceprimátor mesta Trenčín</p>
+    <p class="intro">Venujem sa mäkkým projektom, aktivitám s ľuďmi a občianskymi združeniami, projektu EHMK, propagácii mesta, mobilite a technológiám – všetkému, čo má zmysel pre rozvoj Trenčína.</p>
+  </div>
+</section>
+
+<section id="projekty">
+  <h2>Projekty</h2>
+  <div class="projects-grid">
+    <div class="project-group">
+      <h3>Projekty</h3>
+      <ul>
+        <li>Spoluautor víťazného bidbooku EHMK</li>
+        <li>Nórske fondy pre mesto Trenčín</li>
+        <li>Inštitút participácie na Mestskom úrade</li>
+        <li>Mládežnícka klubovňa na Fiesta moste</li>
+        <li>Spolupráca s tretím sektorom v meste</li>
+        <li>Časť projektu rekonštrukcie CKKP Hviezda</li>
+        <li>A ďalšie</li>
+      </ul>
+    </div>
+    <div class="project-group">
+      <h3>Drobné projekty</h3>
+      <ul>
+        <li>Do práce na bicykli</li>
+        <li>Knižná búdka na Juhu</li>
+        <li>Eskalátor na bicykle</li>
+        <li>Fundraising pre fungovanie Káčka od IPčka</li>
+        <li>Vratné poháre a triedenie odpadu na podujatiach</li>
+      </ul>
+    </div>
+    <div class="project-group">
+      <h3>Investičné akcie</h3>
+      <ul>
+        <li>Investičné akcie na Juhu</li>
+        <li>Cyklotraily na Brezine, aby sa oddelili chodci a bežci od cyklistov</li>
+        <li>Žihadielko</li>
+        <li>Pumptrack</li>
+        <li>Skatepark</li>
+        <li>Workout</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="o-mne">
+  <h2>O mne</h2>
+  <div class="about-grid">
+    <div>
+      <p>Navštevoval som francúzske bilingválne Gymnázium Ľ. Štúra v Trenčíne a neskôr študoval na City University of Seattle v Trenčíne. Pracoval som v rodinnej firme a v medzinárodných spoločnostiach na pozíciach spojených s informačnými technológiami.</p>
+      <p>Od roku 2010 som poslancom pre mestskú časť Juh a od roku 2017 aj zástupcom primátora mesta Trenčín.</p>
+    </div>
+    <div>
+      <p>V práci sa venujem najmä mäkkým projektom, teda aktivitám priamo s ľuďmi a občianskymi združeniami, projektu EHMK, propagácii mesta, mobilite, technológiám a všetkému zmysluplnému pre rozvoj mesta.</p>
+      <p>Zaujímam sa o industriálny dizajn, fotografovanie, dopravu a urbanizmus. Keď mám voľný čas, vypĺňam ho záľubami ako sú podcasty, 3D tlač a domáce servery.</p>
+      <p>Doma ma tešia 2-ročný syn, 4-ročná dcéra, manželka a kocúr.</p>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <h2>Kontakt</h2>
+  <ul class="contact-list">
+    <li><span class="label">E-mail</span><a href="mailto:patrik.zak@trencin.sk" target="_blank" rel="noopener noreferrer">patrik.zak@trencin.sk</a></li>
+    <li><span class="label">Telefón</span><a href="tel:+421902911258" target="_blank" rel="noopener noreferrer">0902 911 258</a></li>
+    <li><span class="label">Facebook</span><a href="https://www.facebook.com/patrikzak" target="_blank" rel="noopener noreferrer">facebook.com/patrikzak</a></li>
+  </ul>
+</section>
+
+<footer>
+  &copy; <span id="year"></span> Patrik Žák — poslanec mestskej časti Juh, Trenčín
+</footer>
+
+<script>
+  function toggleMenu(button){
+    const menu=document.getElementById('nav-menu');
+    const isOpen=menu.classList.toggle('open');
+    button.setAttribute('aria-expanded',String(isOpen));
+  }
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.querySelectorAll('nav a').forEach(link=>{
+    link.addEventListener('click', ()=>{
+      const menu=document.getElementById('nav-menu');
+      const button=document.querySelector('.nav-toggle');
+      menu.classList.remove('open');
+      button.setAttribute('aria-expanded','false');
+    });
+  });
+</script>
+
+</body>
+</html>
