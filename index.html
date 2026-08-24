@@ -121,7 +121,10 @@
     height:220px;
     object-fit:cover;
     border-radius:50%;
-    border:3px solid var(--blue);
+    border:8px solid transparent;
+    background:
+      linear-gradient(#ffffff,#ffffff) padding-box,
+      linear-gradient(135deg,var(--yellow-1),var(--yellow-2)) border-box;
     flex:0 0 auto;
   }
   .hero-content{padding-top:8px;}
@@ -255,7 +258,7 @@
 <header>
   <div class="header-inner">
     <div class="brand">
-      <img src="logo.png" alt="Logo Patrika Žáka">
+      <img src="logo.svg" alt="Logo Patrika Žáka">
       <span class="brand-text">Patrik Žák</span>
     </div>
     <nav>
