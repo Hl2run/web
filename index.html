@@ -50,9 +50,7 @@
   .brand img{
     width:46px;
     height:46px;
-    border-radius:50%;
-    object-fit:cover;
-    border:2px solid var(--blue);
+    object-fit:contain;
   }
   .brand-text{
     font-weight:700;
@@ -111,7 +109,22 @@
     margin:0 auto;
     padding:64px 24px;
   }
-  .hero{padding-top:80px;}
+  .hero{
+    display:flex;
+    align-items:flex-start;
+    gap:42px;
+    padding-top:80px;
+    text-align:left;
+  }
+  .hero img{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid var(--blue);
+    flex:0 0 auto;
+  }
+  .hero-content{padding-top:8px;}
   .hero h1{
     font-size:2.1rem;
     margin-bottom:8px;
@@ -216,8 +229,16 @@
       padding:11px 16px;
     }
     .nav-toggle{display:block;}
-    .hero{text-align:center;padding-top:48px;}
-    .hero p.intro{margin:0 auto;}
+    .hero{
+      flex-direction:column;
+      align-items:flex-start;
+      gap:24px;
+      text-align:left;
+      padding-top:48px;
+    }
+    .hero img{width:160px;height:160px;}
+    .hero-content{padding-top:0;}
+    .hero p.intro{margin:0;}
     .about-grid{grid-template-columns:1fr;}
     .projects-grid{grid-template-columns:1fr;gap:0;}
     section{padding:48px 20px;}
@@ -234,7 +255,7 @@
 <header>
   <div class="header-inner">
     <div class="brand">
-      <img src="profil.jpg" alt="Patrik Žák">
+      <img src="logo.png" alt="Logo Patrika Žáka">
       <span class="brand-text">Patrik Žák</span>
     </div>
     <nav>
@@ -248,7 +269,8 @@
 </header>
 
 <section class="hero" id="uvod">
-  <div>
+  <img src="profilovka.jpg" alt="Patrik Žák – poslanec a viceprimátor Trenčína">
+  <div class="hero-content">
     <h1>Patrik Žák</h1>
     <p class="role">Poslanec mestskej časti Juh · druhý viceprimátor mesta Trenčín</p>
     <p class="intro">Venujem sa mäkkým projektom, aktivitám s ľuďmi a občianskymi združeniami, projektu EHMK, propagácii mesta, mobilite a technológiám – všetkému, čo má zmysel pre rozvoj Trenčína.</p>
@@ -261,22 +283,23 @@
     <div class="project-group">
       <h3>Projekty</h3>
       <ul>
-        <li>Spoluautor víťazného bidbooku EHMK</li>
-        <li>Nórske fondy pre mesto Trenčín</li>
+        <li>Spoluautor projektu Európske hlavné mesto kultúry, ktorý priniesol viac ako 50 miliónov eur</li>
+        <li>Nórske fondy pre Trenčín v hodnote viac ako 4 milióny eur</li>
         <li>Inštitút participácie na Mestskom úrade</li>
         <li>Mládežnícka klubovňa na Fiesta moste</li>
         <li>Spolupráca s tretím sektorom v meste</li>
         <li>Časť projektu rekonštrukcie CKKP Hviezda</li>
-        <li>A ďalšie</li>
+        <li>a ďalšie…</li>
       </ul>
     </div>
     <div class="project-group">
       <h3>Drobné projekty</h3>
       <ul>
+        <li>Fundraising pre fungovanie Káčka od IPčka</li>
+        <li>Európsky týždeň mobility</li>
         <li>Do práce na bicykli</li>
         <li>Knižná búdka na Juhu</li>
         <li>Eskalátor na bicykle</li>
-        <li>Fundraising pre fungovanie Káčka od IPčka</li>
         <li>Vratné poháre a triedenie odpadu na podujatiach</li>
       </ul>
     </div>
