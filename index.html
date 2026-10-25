@@ -30,23 +30,255 @@
 <link rel="apple-touch-icon" href="zak.jpg">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SC4XE2XHMJ"></script>
 <script>
-window.dataLayer=window.dataLayer||[];
+window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','G-SC4XE2XHMJ');
+gtag('js', new Date());
+gtag('config', 'G-SC4XE2XHMJ');
 </script>
 <style>
-:root{--text:#1a1a1a;--muted:#5a5a5a;--blue:#1e388e;--yellow-1:#fdd13f;--yellow-2:#feb821;--border:#e6e6e6;--maxw:1000px;}
-*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{background:#fff;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;}a{color:var(--blue);text-decoration:none;}a:hover{text-decoration:underline;}img{max-width:100%;display:block;}header{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--border);z-index:100;}.header-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0 18px;padding:10px 24px;}nav{width:100%;flex:0 0 100%;position:relative;padding-top:10px;}nav::before{content:"";position:absolute;top:0;left:50%;width:100vw;transform:translateX(-50%);border-top:1px solid var(--border);}nav ul{display:flex;list-style:none;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center;}nav a{display:inline-flex;align-items:center;justify-content:center;background:var(--blue);border:2px solid var(--blue);border-radius:999px;padding:3.75px 14px;font-weight:700;font-size:.86rem;line-height:1.25;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap;text-align:center;transition:color .2s ease,background .2s ease,border-color .2s ease,transform .2s ease;}nav a:hover{color:var(--blue);background:linear-gradient(135deg,var(--yellow-1),var(--yellow-2));border-color:var(--yellow-2);text-decoration:none;transform:translateY(-1px);}section{max-width:var(--maxw);margin:0 auto;padding:27px 24px;}.hero{display:flex;align-items:flex-start;gap:42px;padding-top:34px;text-align:left;}.hero>img{width:220px;height:220px;object-fit:cover;border-radius:50%;border:4px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#fff,#fff) border-box;flex:0 0 auto;}.hero-content{padding-top:8px;}.hero h1{font-size:2.1rem;margin-bottom:8px;line-height:1.25;color:var(--blue);}.hero .role{color:var(--muted);font-size:1.05rem;font-weight:600;margin-bottom:18px;}.hero .intro{max-width:560px;}h2{font-size:1.6rem;margin-bottom:28px;padding-bottom:12px;border-bottom:4px solid transparent;border-image:linear-gradient(90deg,var(--yellow-1),var(--yellow-2)) 1;display:inline-block;color:var(--blue);} .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;}.project-group{margin-bottom:36px;}.project-group h3{font-size:1.15rem;margin-bottom:14px;color:var(--blue);}.project-group ul{list-style:none;padding-left:0;}.project-group li{padding:8px 0 8px 22px;border-bottom:1px solid var(--border);position:relative;}.project-group li:last-child{border-bottom:none;}.project-group li::before{content:"▸";position:absolute;left:0;top:8px;background:linear-gradient(180deg,var(--yellow-1),var(--yellow-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700;}.project-group li a{text-decoration:none;color:var(--blue);}.project-group li a:hover{color:var(--yellow-2);} .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}.about-grid p{margin-bottom:16px;}.contact-list{list-style:none;display:flex;flex-direction:column;gap:14px;font-size:1.05rem;}.contact-list li{display:flex;align-items:center;gap:10px;}.contact-list .label{font-weight:600;min-width:90px;color:var(--blue);}.contact-list a:hover{color:var(--yellow-2);}footer{text-align:center;padding:32px 24px;color:#fff;font-size:.85rem;background:linear-gradient(90deg,#1e388e,#274a9e);} @media(max-width:600px){.header-inner{padding:10px 20px;}.brand{gap:10px;}.brand img{width:90px;max-height:40px;}.brand-link{font-size:.8rem;line-height:1.2;}.hero{flex-direction:column;align-items:flex-start;gap:24px;padding-top:32px;text-align:left;}.hero>img{width:160px;height:160px;}.hero-content{padding-top:0;}.projects-grid{grid-template-columns:1fr;gap:0;}.about-grid{grid-template-columns:1fr;gap:0;}section{padding:27px 20px;}} @media(max-width:600px){nav a{padding:3px 12px;font-size:.75rem;}}
+:root {
+  --text: #1a1a1a;
+  --muted: #5a5a5a;
+  --blue: #1e388e;
+  --yellow-1: #fdd13f;
+  --yellow-2: #feb821;
+  --border: #e6e6e6;
+  --maxw: 1000px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: #fff;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; display: block; }
+
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+}
+.header-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 18px 24px;
+}
+
+section {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 27px 24px;
+}
+
+.hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 42px;
+  padding-top: 34px;
+  text-align: left;
+}
+.hero>img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  background: linear-gradient(#fff,#fff) padding-box,
+              linear-gradient(135deg, #fff, #fff) border-box;
+  flex: 0 0 auto;
+}
+.hero-content { padding-top: 8px; }
+.hero h1 {
+  font-size: 2.1rem;
+  margin-bottom: 8px;
+  line-height: 1.25;
+  color: var(--blue);
+}
+.hero .role {
+  color: var(--muted);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.hero .intro { max-width: 560px; }
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 28px;
+  padding-bottom: 12px;
+  border-bottom: 4px solid transparent;
+  border-image: linear-gradient(90deg, var(--yellow-1), var(--yellow-2)) 1;
+  display: inline-block;
+  color: var(--blue);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+.project-group { margin-bottom: 36px; }
+.project-group h3 {
+  font-size: 1.15rem;
+  margin-bottom: 14px;
+  color: var(--blue);
+}
+.project-group ul { list-style: none; }
+.project-group li {
+  padding: 8px 0 8px 22px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.project-group li:last-child { border-bottom: none; }
+.project-group li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: var(--yellow-2);
+  font-weight: 700;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.about-grid p { margin-bottom: 16px; }
+
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 1.05rem;
+}
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.contact-list .label {
+  font-weight: 600;
+  min-width: 90px;
+  color: var(--blue);
+}
+
+footer {
+  text-align: center;
+  padding: 32px 24px;
+  color: #fff;
+  font-size: .85rem;
+  background: linear-gradient(90deg, #1e388e, #274a9e);
+}
+
+@media (max-width: 600px) {
+  .header-inner { padding: 14px 20px; }
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding-top: 32px;
+  }
+  .hero>img { width: 160px; height: 160px; }
+  .projects-grid { grid-template-columns: 1fr; gap: 0; }
+  .about-grid { grid-template-columns: 1fr; gap: 0; }
+  section { padding: 27px 20px; }
+}
 </style>
 </head>
 <body>
-<header><div class="header-inner"><div class="brand"><a class="brand-logo-link" href="https://www.janforgac.sk" target="_blank" rel="noopener noreferrer"><img src="logo.svg" alt="Logo"></a><a class="brand-link" href="https://www.janforgac.sk" target="_blank" rel="noopener noreferrer">Podporujem Jána Forgáča za primátora Trenčína</a></div><nav><ul id="nav-menu"><li><a href="#o-mne">O mne</a></li><li><a href="#kontakt">Kontakt</a></li></ul></nav></div></header>
-<section class="hero" id="uvod"><img src="zak.jpg" alt="Patrik Žák – poslanec a viceprimátor Trenčína"><div class="hero-content"><h1>Patrik Žák</h1><p class="role">Poslanec mestskej časti Juh a druhý viceprimátor mesta Trenčín.</p><p class="intro">Venujem sa práci pre mesto, aktívne podporujem investície, rozvoj infraštruktúry, bezpečnosť a kvalitné životné prostredie. Moje priority sú aj transparentnosť, otvorenosť a spolupráca s ľuďmi v meste.</p></div></section>
-<section id="projekty"><h2>Na čom pracujem</h2><div class="projects-grid"><div class="project-group"><h3>Projekty</h3><ul><li><a href="https://www.trencin2026.eu" target="_blank" rel="noopener noreferrer">Spoluautor projektu Európska hlavné mesto kultúry, ktoré Trenčín priniesol vďaka 50 miliónom eur</a></li><li><a href="https://trencin.sk/pre-obcanov/investicie/projekty-eu/grant-ehp-a-norska-culture-connects-trebo-more-culture/" target="_blank" rel="noopener noreferrer">Projekty Nórskeho fondu pre Trenčín vo forme 4 milióny eur</a></li><li><a href="https://trencin.sk/pre-obcanov/institut-participacie/" target="_blank" rel="noopener noreferrer">Inštitút participácie na Mestskom úrade</a></li><li>Mládež a kultúra na Fierte moste</li><li><a href="https://trencin.sk/pre-obcanov/institut-participacie/ulice-detom/" target="_blank" rel="noopener noreferrer">Ulice detom</a></li><li>Inkluzívne zmeny v meste a na úrade</li><li><a href="https://trencin.sk/samosprava/transparentny-trencin/dotacie/" target="_blank" rel="noopener noreferrer">Zavedenie elektronického systému na dotácie mesta</a></li><li>Spolupráca s tretím sektorom v meste</li><li><a href="https://www.hviezda.eu" target="_blank" rel="noopener noreferrer">Dopravné a rekreačné projekty</a></li><li>a ďalšie</li></ul></div><div class="project-group"><h3>Drobnú projekty</h3><ul><li><a href="https://ipcko.sk/kako/kako-trencin/" target="_blank" rel="noopener noreferrer">Finančné zabezpečenie pre fungovanie Káhery od IPčko</a></li><li><a href="https://www.euroms.sk" target="_blank" rel="noopener noreferrer">Europský program mobility</a></li><li><a href="https://dopracenabicyklu.eu/vysledky/2026/trencin/" target="_blank" rel="noopener noreferrer">Do práce na bicykli</a></li><li>Knižnica a bývanie na Juhu</li><li><a href="https://trencin.sk/aktuality/vyjst-s-bicyklom-z-podchodu-vam-pomoze/" target="_blank" rel="noopener noreferrer">Eskalátor na bicykle</a></li><li><a href="https://my.sme.sk/trencin/c/na-vianoce-trhoci-sa-zasluhou-vratnych-poharov-bude-pit-ekologia" target="_blank" rel="noopener noreferrer">Vratné poháre a triedený odpad</a></li></ul></div><div class="project-group"><h3>Investície akcie</h3><ul><li>Kúpne dotácie investície na Juhu</li><li><a href="https://trencin.sk/pre-obcanov/sport/divo-traily-na-brezine/" target="_blank" rel="noopener noreferrer">Cyklo tratie na Brezine</a></li><li><a href="https://www.facebook.com/watch/?v=1438848649479797" target="_blank" rel="noopener noreferrer">Východné a dubinské</a></li><li><a href="https://trencin.sk/pre-obcanov/sport/pumptrack/" target="_blank" rel="noopener noreferrer">Pumptrack pod Juhom</a></li><li><a href="https://trencin.sk/aktuality/zacinala-planovat-novy-skaterek/" target="_blank" rel="noopener noreferrer">Nové skatepark</a></li><li><a href="https://maps.app.goo.gl/NYHqa4EdAn6AGwi9" target="_blank" rel="noopener noreferrer">Workoutové ihrisko na Juhu</a></li></ul></div></div></section>
-<section id="o-mne"><h2>O mne</h2><div class="about-grid"><div><p>Navštevoval som francúzske bilingválne Gymnázium Ľ. Štúra v Trenčíne a neskôr City University of Seattle v Trenčíne. Prax a práce na projektoch som získal v rôznych oblastiach, od médií až po oblasť finančných technológií a komunikácie.</p><p>Od roku 2010 som poslancom pre mestskú časť Juh a od roku 2017 aj zástupcom primátora mesta Trenčín.</p></div><div><p>V práci sa venujem najmä otázkam mestského rozvoja, participácie, verejného priestoru, mobility a podpore mladých ľudí. Snažím sa, aby sa rozhodnutia robili otvorene a s ohľadom na obyčajných ľudí.</p><p>Zaujímam sa o šport, fotografovanie, dopravu a urbanizmus. Mám radišiu jednoduchý a priaznivý prístup k riešeniu problémov, ale zároveň aj ambíciu k dlhodobým projektom, ktoré menia mesto k lepšiemu.</p></div></div></section>
-<section id="kontakt"><h2>Kontakt</h2><ul class="contact-list"><li><span class="label">E-mail</span><a href="mailto:patrik.zak@trencin.sk" target="_blank" rel="noopener noreferrer">patrik.zak@trencin.sk</a></li><li><span class="label">Telefón</span><a href="tel:+421902911258" target="_blank" rel="noopener noreferrer">0902 911 258</a></li><li><span class="label">Facebook</span><a href="https://www.facebook.com/patrikzak" target="_blank" rel="noopener noreferrer">facebook.com/patrikzak</a></li></ul></section>
+<header>
+  <div class="header-inner"></div>
+</header>
+
+<section class="hero" id="uvod">
+  <img src="zak.jpg" alt="Patrik Žák – poslanec a viceprimátor Trenčína">
+  <div class="hero-content">
+    <h1>Patrik Žák</h1>
+    <p class="role">Poslanec mestskej časti Juh a druhý viceprimátor mesta Trenčína.</p>
+    <p class="intro">Venujem sa práci pre mesto, aktívne podporujem investície, rozvoj infraštruktúry, bezpečnosť a kvalitné životné prostredie. Moje priority sú aj transparentnosť, otvorenosť a spolupráca s ľuďmi v meste.</p>
+  </div>
+</section>
+
+<section id="projekty">
+  <h2>Na čom pracujem</h2>
+  <div class="projects-grid">
+    <div class="project-group">
+      <h3>Projekty</h3>
+      <ul>
+        <li><a href="https://www.trencin2026.eu" target="_blank" rel="noopener noreferrer">Spoluautor projektu Európska hlavné mesto kultúry, ktoré Trenčín priniesol vďaka 50 miliónom eur</a></li>
+        <li><a href="https://trencin.sk/pre-obcanov/investicie/projekty-eu/grant-ehp-a-norska-culture-connects-trebo-more-culture/" target="_blank" rel="noopener noreferrer">Projekty Nórskeho fondu pre Trenčín vo forme 4 milióny eur</a></li>
+        <li><a href="https://trencin.sk/pre-obcanov/institut-participacie/" target="_blank" rel="noopener noreferrer">Inštitút participácie na Mestskom úrade</a></li>
+        <li>Mládež a kultúra na Fierte moste</li>
+        <li><a href="https://trencin.sk/pre-obcanov/institut-participacie/ulice-detom/" target="_blank" rel="noopener noreferrer">Ulice detom</a></li>
+        <li>Inkluzívne zmeny v meste a na úrade</li>
+        <li><a href="https://trencin.sk/samosprava/transparentny-trencin/dotacie/" target="_blank" rel="noopener noreferrer">Zavedenie elektronického systému na dotácie mesta</a></li>
+        <li>Spolupráca s tretím sektorom v meste</li>
+        <li><a href="https://www.hviezda.eu" target="_blank" rel="noopener noreferrer">Dopravné a rekreačné projekty</a></li>
+        <li>a ďalšie</li>
+      </ul>
+    </div>
+
+    <div class="project-group">
+      <h3>Drobnú projekty</h3>
+      <ul>
+        <li><a href="https://ipcko.sk/kako/kako-trencin/" target="_blank" rel="noopener noreferrer">Finančné zabezpečenie pre fungovanie Káhery od IPčko</a></li>
+        <li><a href="https://www.euroms.sk" target="_blank" rel="noopener noreferrer">Europský program mobility</a></li>
+        <li><a href="https://dopracenabicyklu.eu/vysledky/2026/trencin/" target="_blank" rel="noopener noreferrer">Do práce na bicykli</a></li>
+        <li>Knižnica a bývanie na Juhu</li>
+        <li><a href="https://trencin.sk/aktuality/vyjst-s-bicyklom-z-podchodu-vam-pomoze/" target="_blank" rel="noopener noreferrer">Eskalátor na bicykle</a></li>
+        <li><a href="https://my.sme.sk/trencin/c/na-vianoce-trhoci-sa-zasluhou-vratnych-poharov-bude-pit-ekologia" target="_blank" rel="noopener noreferrer">Vratné poháre a triedený odpad</a></li>
+      </ul>
+    </div>
+
+    <div class="project-group">
+      <h3>Investície akcie</h3>
+      <ul>
+        <li>Kúpne dotácie investície na Juhu</li>
+        <li><a href="https://trencin.sk/pre-obcanov/sport/divo-traily-na-brezine/" target="_blank" rel="noopener noreferrer">Cyklo tratie na Brezine</a></li>
+        <li><a href="https://www.facebook.com/watch/?v=1438848649479797" target="_blank" rel="noopener noreferrer">Východné a dubinské</a></li>
+        <li><a href="https://trencin.sk/pre-obcanov/sport/pumptrack/" target="_blank" rel="noopener noreferrer">Pumptrack pod Juhom</a></li>
+        <li><a href="https://trencin.sk/aktuality/zacinala-planovat-novy-skaterek/" target="_blank" rel="noopener noreferrer">Nové skatepark</a></li>
+        <li><a href="https://maps.app.goo.gl/NYHqa4EdAn6AGwi9" target="_blank" rel="noopener noreferrer">Workoutové ihrisko na Juhu</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="o-mne">
+  <h2>O mne</h2>
+  <div class="about-grid">
+    <div>
+      <p>Navštevoval som francúzske bilingválne Gymnázium Ľ. Štúra v Trenčíne a neskôr City University of Seattle v Trenčíne. Prax a práce na projektoch som získal v rôznych oblastiach, od médií až po oblasť finančných technológií a komunikácie.</p>
+      <p>Od roku 2010 som poslancom pre mestskú časť Juh a od roku 2017 aj zástupcom primátora mesta Trenčín.</p>
+    </div>
+    <div>
+      <p>V práci sa venujem najmä otázkam mestského rozvoja, participácie, verejného priestoru, mobility a podpore mladých ľudí. Snažím sa, aby sa rozhodnutia robili otvorene a s ohľadom na obyčajných ľudí.</p>
+      <p>Zaujímam sa o šport, fotografovanie, dopravu a urbanizmus. Mám radišiu jednoduchý a priaznivý prístup k riešeniu problémov, ale zároveň aj ambíciu k dlhodobým projektom, ktoré menia mesto k lepšiemu.</p>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <h2>Kontakt</h2>
+  <ul class="contact-list">
+    <li><span class="label">E-mail</span><a href="mailto:patrik.zak@trencin.sk" target="_blank" rel="noopener noreferrer">patrik.zak@trencin.sk</a></li>
+    <li><span class="label">Telefón</span><a href="tel:+421902911258" target="_blank" rel="noopener noreferrer">0902 911 258</a></li>
+    <li><span class="label">Facebook</span><a href="https://www.facebook.com/patrikzak" target="_blank" rel="noopener noreferrer">facebook.com/patrikzak</a></li>
+  </ul>
+</section>
+
 <footer>&copy; <span id="year"></span> Patrik Žák — poslanec mestskej časti Juh, Trenčín</footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
